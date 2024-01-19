@@ -17,7 +17,7 @@ void secuencia7(void)
 	while(1){
 
         for(int i=0; i<8; i++){
-            digitalWrite(Leds[(i*2)],1);
+            digitalWrite(led[(i*2)],1);
             control();
 			if(aux) return;
             digitalWrite(led[i],0);

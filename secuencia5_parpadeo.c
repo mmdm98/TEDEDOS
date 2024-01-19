@@ -68,7 +68,6 @@ void secuencia5(void)
 								}	
 					}				
 				}		
-			}
             }
         }
     }
