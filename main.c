@@ -6,19 +6,19 @@
 #include "EasyPIO.h"
 #include <wiringPi.h>
 
-
 void autofantastico(void);
 void lacarrera(void);
 void elchoque(void);
 void apilada(void);
 
-void parimpar(void);
-void parpadeo(void);
-void prendeapaga(void);
-void puente(void);
+void secuencia5_parpadeo(void);
+void secuencia6_puente(void);
+void secuencia7_parimpar(void);
+void secuencia8_prendeapaga(void);
+
 
 void key(void); 
-void set_gpio(void);
+void setGPIO(void);
 int recibir(void);
 char lectura(int);
 void ReadADC(void);
@@ -35,14 +35,14 @@ int main(void)
 	
 	pioInit();	//Inicializa puertos
 	
-	set_gpio();	//Configura entradas y salidas
+	setGPIO();	//Configura entradas y salidas
 	
 	ReadADC();	//Setea la velocidad inicial de las secuencias
 	
 	while(1){
 		
 		system("clear");//Limpieza de pantalla
-		printf("Seleccione la secuencia de LUCES:\n -1)Auto Fantastico\n -2)La Carrera\n -3)El Choque\n -4)La Apilada\n -5)parimpar\n -6)parpadeo\n -7)prendeapaga\n -8)puente\n -9)Control Remoto\n -10)Seteo de Velocidad \n -11)Salir \n");
+		printf("Seleccione la secuencia de LUCES:\n -1)Auto Fantastico\n -2)La Carrera\n -3)El Choque\n -4)La Apilada\n -5)Parpadeo\n -6)Puente\n -7)Parimpar\n -8)Prendeapaga\n -9)Control Remoto\n -10)Seteo de Velocidad \n -11)Salir \n");
 		printf("\n\n Opción: ");
 		scanf("%d", &s);
 		getchar(); //Espera el ENTER
@@ -65,19 +65,19 @@ int main(void)
 			break;
 		    }
 		    case 5:{
-			parimpar();
+	        secuencia5_parpadeo();
 			break;	
 			}
 			case 6:{
-			parpadeo();
+			secuencia6_puente();
 			break;	
 			}
 			case 7:{
-			prendeapaga();
+			secuencia7_parimpar();
 			break;	
 			}
 			case 8:{
-			puente();
+			secuencia8_prendeapaga();
 			break;	
 			}
 			case 9:{
