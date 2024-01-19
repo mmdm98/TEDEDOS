@@ -12,10 +12,10 @@ void autofantastico(void);
 void lacarrera(void);
 void elchoque(void);
 void apilada(void);
-void secuencia5(void);
-void secuencia6(void);
-void secuencia7(void);
-void secuencia8(void);
+void secuencia5_parpadeo(void);
+void secuencia6_puente(void);
+void secuencia7_parimpar(void);
+void secuencia8_prendeapaga(void);
 char lectura(int);
 void mensaje(void);
 
@@ -141,22 +141,22 @@ int recibir(void)
 			break;
 		    }
 		    case '5':{
-			secuencia5();
+			secuencia5_parpadeo();
 			mensaje();	
 			break;	
 			}
 			case '6':{
-			secuencia6();
+			secuencia6_puente();
 			mensaje();	
 			break;	
 			}
 			case '7':{
-			secuencia7();
+			secuencia7_parimpar();
 			mensaje();	
 			break;	
 			}
 			case '8':{
-			secuencia8();
+			secuencia8_prendeapaga();
 			mensaje();	
 			break;	
 			}

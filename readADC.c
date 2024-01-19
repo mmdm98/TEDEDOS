@@ -10,7 +10,7 @@ extern int contador, pulsadores[];
 const char PCF8591 = 0x48;
 int fd;
 
-void leerAdc(void)
+void readADC(void)
 {
 	int val;
 	

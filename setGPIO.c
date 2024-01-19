@@ -8,7 +8,7 @@ extern int led[],pulsadores[],llaves[];
 
 //Variables globales definidas en main.c
 
-void set_gpio(void){
+void setGPIO(void){
 
 	for(int i=0;i<8;i++)
 		pinMode(led[i],OUTPUT);
