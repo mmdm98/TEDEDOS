@@ -1,6 +1,6 @@
 .PHONY: clean
 
-objetos = main.o leerAdc.o lectura.o recibir.o secuencia8.o secuencia7.o secuencia6.o set_gpio.o secuencia5.o elchoque.o apilada.o control.o apagar.o contrasenia.o autofantastico.o lacarrera.o EasyPIO.o
+objetos = main.o readADC.o lectura.o recibir.o secuencia8.o secuencia7.o secuencia6.o setGPIO.o secuencia5.o elchoque.o apilada.o control.o apagar.o key.o autofantastico.o lacarrera.o EasyPIO.o
 
 integrador: $(objetos) EasyPIO.h
 	gcc -o integrador $(objetos) -lwiringPi
@@ -11,10 +11,10 @@ EasyPIO.o: EasyPIO.c
 main.o: main.c
 	gcc -c $^
 
-set_gpio.o: set_gpio.c
+setGPIO.o: setGPIO.c
 	gcc -c $^
 
-contrasenia.o: contrasenia.c
+key.o: key.c
 	gcc -c $^
 
 autofantastico.o: autofantastico.c
@@ -53,7 +53,7 @@ recibir.o: recibir.c
 lectura.o: lectura.c
 	gcc -c $^
 
-leerAdc.o: leerAdc.c
+readADC.o: readADC.c
 	gcc -c $^
 
 clean: 

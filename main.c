@@ -21,7 +21,7 @@ void key(void);
 void set_gpio(void);
 int recibir(void);
 char lectura(int);
-void ReadADC(void);
+void readADC(void);
 
 //Variable globales
 int led[8]={23,24,25,12,16,20,21,26}, pulsadores[2]={17,27};
