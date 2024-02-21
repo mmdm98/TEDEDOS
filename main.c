@@ -25,19 +25,19 @@ void readADC(void);
 
 //Variable globales
 int led[8]={23,24,25,12,16,20,21,26}, pulsadores[2]={17,27};
-contador=25000, aux, fd, flag_recibir=0;
+int contador=25000, aux, fd, flag_recibir=0;
 
 int main(void)
 {
 	int s;
 	
-	key(); //Control de acceso
+	//key(); //Control de acceso
 	
 	pioInit();	//Inicializa puertos
 	
 	setGPIO();	//Configura entradas y salidas
 	
-	ReadADC();	//Setea la velocidad inicial de las secuencias
+	//readADC();	//Setea la velocidad inicial de las secuencias
 	
 	while(1){
 		
@@ -86,7 +86,7 @@ int main(void)
 			break;
 			}
 			case 10:{
-			ReadADC();
+			readADC();
 			break;	
 			}
 			case 11:{

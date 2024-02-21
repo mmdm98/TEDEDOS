@@ -12,7 +12,7 @@
 int getch(void);
 
 
-int contrasenia(void)
+int key(void)
 {
 	char usuario[LONGITUD + 1];
 	char clave[LONGITUD + 1];

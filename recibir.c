@@ -27,7 +27,9 @@ int recibir(void)
 	struct termios oldtty, newtty;
 	int  veloc; 
 	long baud;
-	char  puerto[15] = "/dev/ttyACM0";
+	//char  puerto[15] = "/dev/ttyACM0";
+	char  puerto[15] = "/dev/serial0";
+
 	//char  puerto[15] = "COM5";
 	char buffer;
 		
@@ -36,8 +38,12 @@ int recibir(void)
 		system("clear");
 		printf("\n Ingresar el Puerto Serial a utilizar: ");
 
-		//printf("\nPuerto '/dev/ttySx': ");
-		//scanf("%c", &puerto[9]);
+		// while((fd = open(puerto,O_RDWR | O_NOCTTY )) < 0){
+		// 	printf("\nPuerto '/dev/ttySx': ");
+		// scanf("%c", &puerto[9]);
+		//  }
+		// printf("\nPuerto '/dev/ttySx': ");
+		// scanf("%c", &puerto[9]);
 
 		if ((fd = open(puerto,O_RDWR | O_NOCTTY )) < 0)
 				{

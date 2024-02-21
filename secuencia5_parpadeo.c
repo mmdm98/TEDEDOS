@@ -7,7 +7,7 @@
 extern int led[], aux;
 void control(void);
 
-void secuencia5(void)
+void secuencia5_parpadeo(void)
 {	int matriz[38][8]={
                     {0,0,0,0,0,0,0,0},
                     {1,0,0,0,0,0,0,1},

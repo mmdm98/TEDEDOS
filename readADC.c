@@ -5,10 +5,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-extern int contador, pulsadores[];
+extern int contador, pulsadores[], fd;
 
 const char PCF8591 = 0x48;
-int fd;
+//int fd;
 
 void readADC(void)
 {
