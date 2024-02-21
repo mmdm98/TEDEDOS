@@ -14,9 +14,14 @@
 #define CLAVE "12345"
 #define USUARIO "daniela"
 #define LONGITUD 10
+// Colores ANSI para la terminal
+#define COLOR_ROJO "\033[1;31m"
+#define COLOR_VERDE "\033[1;32m"
+#define COLOR_RESET "\033[0m"
 
 // User func
 int getch(void);
+//extern int strcmp_arm(const char *s1, const char *s2);
 
 // User code
 int key(void)
@@ -31,17 +36,17 @@ int key(void)
 	do{
 	i = 0;
 	system("clear");//Limpieza de pantalla
-	printf("\n Inicio de Sesión: \n");
-	printf("\n Ingrese Usuario: ");
+	printf(COLOR_ROJO "\n Inicio de Sesión: \n" COLOR_RESET);
+	printf("\n Ingrese Usuario: " COLOR_VERDE);
 	scanf("%s", usuario);
 
 
-    printf("\n Ingrese su clave de 5 digitos, y luego presione espacio: ");
+    printf(COLOR_RESET "\n Ingrese su clave de 5 digitos, y luego presione [ESPACIO]: ");
 
 	while(1){	
 		caracter = getch();		//Leo de a un caracter
 
-		if(caracter == 32 ){	//comparo con espacio
+		if(caracter == ' ' ){	//comparo con el espacio
 		clave[i] = '\0'; 		//final de cadena igual a cero
 		break;
 		}
@@ -53,17 +58,17 @@ int key(void)
 
 		else if(caracter > 47 && caracter < 123 ){	/*Control de carácteres ingresados*/
 		clave[i] = caracter;
-		printf("*");
+		printf(COLOR_VERDE "*" COLOR_RESET);
 		i++;
 		}
 	}
 
-	if(strcmp(usuario, USUARIO) == 0 && strcmp(clave, CLAVE) == 0){ 
+	if(strcmp_arm(usuario, USUARIO) == 0 && strcmp_arm(clave, CLAVE) == 0){ 
 	ingreso = 1;	
 	}	
 	
 	else{
-		printf("\n Usuario y/o clave son incorrectos \n");
+		printf(COLOR_ROJO "\n Usuario y/o clave son incorrectos, presione [ENTER] para volver a intentar\n" COLOR_RESET);
 		intentos++;
 		getchar();
 	}
@@ -72,11 +77,12 @@ int key(void)
 
 	
 	if (ingreso == 1){
-		printf("\n\n Bienvenido al Sistema \n");
+		printf(COLOR_VERDE "\n\n Bienvenido al Sistema \n" COLOR_RESET);
 		sleep(2);
 	}
 	else{
-		printf("\n\n Ha superado el numero máximo de intentos permitidos \n");
+		printf(COLOR_ROJO "\n\n Ha superado el numero máximo de intentos permitidos \n" COLOR_RESET);
+		return 1;
 	}
 return 0;
 }

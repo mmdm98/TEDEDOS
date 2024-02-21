@@ -24,7 +24,7 @@ void secuencia7_parimpar(void);
 void secuencia8_prendeapaga(void);
 
 
-void key(void); 
+int key(void); 
 void setGPIO(void);
 int recibir(void);
 char lectura(int);
@@ -38,9 +38,12 @@ int contador=25000, aux, fd, flag_recibir=0;
 int main(void)
 {
 	int s;
+	int doorOpen;
 	
-	//key(); //Control de acceso
-	
+	doorOpen = key(); //Control de acceso
+	if(doorOpen == 1){
+		return 0;
+	}
 	pioInit();	//Inicializa puertos
 	
 	setGPIO();	//Configura entradas y salidas
@@ -50,7 +53,19 @@ int main(void)
 	while(1){
 		
 		system("clear");//Limpieza de pantalla
-		printf("Seleccione la secuencia de LUCES:\n -1)Auto Fantastico\n -2)La Carrera\n -3)El Choque\n -4)La Apilada\n -5)Parpadeo\n -6)Puente\n -7)Parimpar\n -8)Prendeapaga\n -9)Control Remoto\n -10)Seteo de Velocidad \n -11)Salir \n");
+		//printf("Seleccione la secuencia de LUCES:\n -1)Auto Fantastico\n -2)La Carrera\n -3)El Choque\n -4)La Apilada\n -5)Parpadeo\n -6)Puente\n -7)Parimpar\n -8)Prendeapaga\n -9)Control Remoto\n -10)Seteo de Velocidad \n -11)Salir \n");
+		printf("Seleccione la secuencia de LUCES:\n"
+       " -\033[1;32m1)\033[0m Auto Fantastico\n"
+       " -\033[1;32m2)\033[0m La Carrera\n"
+       " -\033[1;32m3)\033[0m El Choque\n"
+       " -\033[1;32m4)\033[0m La Apilada\n"
+       " -\033[1;32m5)\033[0m Parpadeo\n"
+       " -\033[1;32m6)\033[0m Puente\n"
+       " -\033[1;32m7)\033[0m Parimpar\n"
+       " -\033[1;32m8)\033[0m Prendeapaga\n"
+       " -\033[1;32m9)\033[0m Control Remoto\n"
+       " -\033[1;32m10)\033[0m Seteo de Velocidad\n"
+       " -\033[1;32m11)\033[0m Salir\n");
 		printf("\n\n Opción: ");
 		scanf("%d", &s);
 		getchar(); //Espera el ENTER
