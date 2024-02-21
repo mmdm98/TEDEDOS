@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                RECIBIR                                      /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <termios.h>
@@ -7,7 +13,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-
+// User func
 void autofantastico(void);
 void lacarrera(void);
 void elchoque(void);
@@ -19,9 +25,10 @@ void secuencia8_prendeapaga(void);
 char lectura(int);
 void mensaje(void);
 
-
+// User extern vars
 extern int fd, flag_recibir;
 
+// User code
 int recibir(void)
 {
 	struct termios oldtty, newtty;
@@ -36,7 +43,7 @@ int recibir(void)
 	flag_recibir = 1;	// Bandera para activar la función lectura en control.c
 	
 		system("clear");
-		printf("\n Ingresar el Puerto Serial a utilizar: ");
+		printf("\n Usando TX/RX serial0: ");
 
 		// while((fd = open(puerto,O_RDWR | O_NOCTTY )) < 0){
 		// 	printf("\nPuerto '/dev/ttySx': ");

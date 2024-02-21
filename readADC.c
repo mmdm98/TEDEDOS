@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                 READADC                                     /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include <wiringPiI2C.h>
 #include <wiringPi.h>
 #include <stdlib.h>
@@ -5,11 +11,14 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+// User extern vars
 extern int contador, pulsadores[], fd;
 
+// User func
 const char PCF8591 = 0x48;
 //int fd;
 
+// User code
 void readADC(void)
 {
 	int val;

@@ -1,6 +1,12 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                 REMOTO                                      /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
 //sudo chmod 777 /dev/ttyACM0
 // gcc -o remoto remoto.c
 
+// User libs
 #include <stdio.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
@@ -10,9 +16,10 @@
 #include <errno.h>
 #include <unistd.h>
 
-
+// User vars
 struct termios tio, oldtio;
 
+// User code
 int main(void)
 {
   int fd, vel, result; 

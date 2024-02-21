@@ -1,13 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                  PARIMPAR                                   /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include "EasyPIO.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+// User extern vars
 extern int led[], aux;
 
+// User func
 void control(void);
 void apagar(void);
 
+// User code
 void secuencia7_parimpar(void)
 {
 	

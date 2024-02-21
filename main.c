@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                    MAIN                                     /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
@@ -6,6 +12,7 @@
 #include "EasyPIO.h"
 #include <wiringPi.h>
 
+// User func
 void autofantastico(void);
 void lacarrera(void);
 void elchoque(void);
@@ -23,10 +30,11 @@ int recibir(void);
 char lectura(int);
 void readADC(void);
 
-//Variable globales
+//User globals
 int led[8]={23,24,25,12,16,20,21,26}, pulsadores[2]={17,27};
 int contador=25000, aux, fd, flag_recibir=0;
 
+// User code
 int main(void)
 {
 	int s;

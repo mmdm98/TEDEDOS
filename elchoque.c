@@ -1,12 +1,21 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                  ELCHOQUE                                   /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include "EasyPIO.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+// User extern vars
 extern int led[], aux;
 
+// User func
 void control(void);
 
+// User code
 void elchoque(void)
 {
 	int matriz[8][8]={{1,0,0,0,0,0,0,1},

@@ -1,13 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                LACARRERA                                    /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include "EasyPIO.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+// User extern vars
 extern int led[], aux;
 
+// User func
 void apagar(void);
 void control(void);
 
+// User code
 void lacarrera(void)
 {
 	int matriz[18][8]={{1,0,0,0,0,0,0,0},

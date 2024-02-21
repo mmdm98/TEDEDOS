@@ -1,17 +1,24 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                     KEY                                     /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include <stdio.h>
 #include <string.h> //gets, strcmp
 #include <stdlib.h> // system
 #include <termios.h>
 #include <unistd.h>
 
+// User defines
 #define CLAVE "12345"
-#define USUARIO "ramiro"
+#define USUARIO "daniela"
 #define LONGITUD 10
 
-
+// User func
 int getch(void);
 
-
+// User code
 int key(void)
 {
 	char usuario[LONGITUD + 1];

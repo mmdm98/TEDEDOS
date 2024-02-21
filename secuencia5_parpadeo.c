@@ -1,12 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                PARPADEO                                     /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include "EasyPIO.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <unistd.h> 
 #include <stdlib.h>
 
+// User extern vars
 extern int led[], aux;
+
+// User func
 void control(void);
 
+// User code
 void secuencia5_parpadeo(void)
 {	int matriz[38][8]={
                     {0,0,0,0,0,0,0,0},

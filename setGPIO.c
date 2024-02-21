@@ -1,13 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                  SETGPIO                                    /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
 //Configuración de los pines GPIO como entradas o salidas.
+// User libs
 #include "EasyPIO.h"
 
+//User defines
 #define INPUT 0
 #define OUTPUT 1
 
+// User extern vars
 extern int led[],pulsadores[];
 
-//Variables globales definidas en main.c
-
+// User code
 void setGPIO(void){
 
 	for(int i=0;i<8;i++)

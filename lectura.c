@@ -1,3 +1,9 @@
+///////////////////////////////////////////////////////////////////////////////////////
+/////                                                                             /////
+/////                                LECTURA                                      /////
+/////                                                                             /////
+///////////////////////////////////////////////////////////////////////////////////////
+// User libs
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <termios.h>
@@ -7,7 +13,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-
+// User code
 char lectura(int fd){
 	char buf;
 	int valor;
